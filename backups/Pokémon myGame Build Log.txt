@@ -1,0 +1,27 @@
+Pokémon myGame Build Log
+
+_b000 // 01/10/2025
+
+	Clean pokeemerald.gba rom after cloning rep for the first time
+
+_b002 // 01/10/2025
+
+	Small little changes in Littleroot Town. Replace NPC icon for Pokémon, added a lake and removed some trees
+
+_b003 // 01/10/2025
+
+	Added "Hello World!!" to Littleroot sign post
+
+_b004 // 03/10/2025
+
+	Added quadrant C3
+	A few bugs after expanding Littleroute town. The trees and buildings warped in themselves.
+
+_b005 // 08/10/2025
+
+	Added QoL features:
+		overworld.h > added lines 10, 13, 14, 59, 62, 63, 91, 93
+		pokemon.h > added lines 58, 62
+	Changed NewGame Spawn location to LittleRoot Town x:14, y:15
+	Follower Pokémon on
+	
