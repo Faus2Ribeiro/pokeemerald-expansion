@@ -1726,6 +1726,7 @@ static void OverworldBasic(void)
 void CB2_OverworldBasic(void)
 {
     OverworldBasic();
+    OverworldPokemon_Update();
 }
 
 void CB2_Overworld(void)
@@ -2435,6 +2436,8 @@ static void InitObjectEventsLocal(void)
     FollowerNPC_HandleSprite();
     UpdateFollowingPokemon();
     TryRunOnWarpIntoMapScript();
+    OverworldPokemon_Init();
+    OverworldPokemon_SpawnForCurrentMap();
 }
 
 static void InitObjectEventsReturnToField(void)
