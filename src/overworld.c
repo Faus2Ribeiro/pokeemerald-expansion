@@ -38,6 +38,7 @@
 #include "m4a.h"
 #include "map_name_popup.h"
 #include "match_call.h"
+#include "overworld_pokemon.h"
 #include "menu.h"
 #include "metatile_behavior.h"
 #include "mirage_tower.h"
