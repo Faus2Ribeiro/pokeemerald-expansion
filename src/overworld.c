@@ -38,6 +38,7 @@
 #include "m4a.h"
 #include "map_name_popup.h"
 #include "match_call.h"
+#include "overworld_pokemon.h"
 #include "menu.h"
 #include "metatile_behavior.h"
 #include "mirage_tower.h"
@@ -1725,6 +1726,7 @@ static void OverworldBasic(void)
 void CB2_OverworldBasic(void)
 {
     OverworldBasic();
+    OverworldPokemon_Update();
 }
 
 void CB2_Overworld(void)
@@ -1788,7 +1790,7 @@ void CB2_NewGame(void)
     PlayTimeCounter_Start();
     ScriptContext_Init();
     UnlockPlayerFieldControls();
-    gFieldCallback = ExecuteTruckSequence;
+    //gFieldCallback = ExecuteTruckSequence;
     gFieldCallback2 = NULL;
     DoMapLoadLoop(&gMain.state);
     SetFieldVBlankCallback();
@@ -2434,6 +2436,8 @@ static void InitObjectEventsLocal(void)
     FollowerNPC_HandleSprite();
     UpdateFollowingPokemon();
     TryRunOnWarpIntoMapScript();
+    OverworldPokemon_Init();
+    OverworldPokemon_SpawnForCurrentMap();
 }
 
 static void InitObjectEventsReturnToField(void)

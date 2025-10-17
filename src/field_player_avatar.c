@@ -33,6 +33,7 @@
 #include "constants/moves.h"
 #include "constants/songs.h"
 #include "constants/trainer_types.h"
+#include "catch_mode.h"
 
 #define NUM_FORCED_MOVEMENTS 18
 #define NUM_ACRO_BIKE_COLLISIONS 5
@@ -389,6 +390,18 @@ void PlayerStep(u8 direction, u16 newKeys, u16 heldKeys)
                 }
                 else
                 {
+if (gInCatchMode)
+    {
+        // Prevent normal movement while in catch mode
+        return;
+    }
+
+    if (newKeys & R_BUTTON)
+    {
+        EnterCatchMode();
+        return; // stop normal movement for this frame
+    }
+
                     MovePlayerAvatarUsingKeypadInput(direction, newKeys, heldKeys);
                     PlayerAllowForcedMovementIfMovingSameDirection();
                 }
